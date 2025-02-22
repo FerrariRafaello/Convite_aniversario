@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> <!-- Fonte Roboto -->
+    <title>Convite de Aniversário</title>
+</head>
+<body>
+    <div class="envelope-container">
+        <div class="envelope">
+            <div class="front">
+                <button class="open-button">Abrir convite</button>
+            </div>
+            <div class="content">
+                <p>Adoraria ter você<br>celebrando meu dia<br>ao meu lado,<br>dia 27 de Fevereiro<br>às 12:30<br>no ClassicoBeachClub,<br>na lagoa.<br>Avenida Epitácio Pessoa 3300.</p>
+                <label for="nameInput">Seu Nome</label>
+                <input type="text" placeholder="Seu nome" id="nameInput" name="nameInput" autocomplete="name">
+                <div id="error-message" class="error-message"></div>
+                <button class="confirm-button" disabled>Confirmar Presença</button>
+            </div>
+        </div>
+    </div>
+    <div class="thank-you-message">Obrigada!!</div>
+    <div id="confetti-container"></div>
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

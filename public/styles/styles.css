@@ -1,0 +1,187 @@
+body {
+    background-color: #f8f8f2;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Textura de papel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.envelope-container {
+    perspective: 1000px;
+    animation: fadeIn 2s ease-in-out;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.envelope {
+    width: 110%;
+    max-width: 550px;
+    height: 110%;
+    max-height: 440px;
+    background-color: #336766; /* Verde mais intenso */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s, opacity 1s;
+    border-radius: 15px;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Textura de papel */
+}
+
+.envelope .front,
+.envelope .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Textura de papel */
+}
+
+.envelope .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope .front .open-button {
+    background-color: #D0A933;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px; /* Border radius nos botões */
+}
+
+.envelope .content {
+    transform: rotateX(180deg);
+    background-color: #336766; /* Verde mais intenso */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.envelope .content p {
+    color: #FFD793; /* Amarelo vivo */
+    margin: 0 0 20px;
+    line-height: 1.5;
+    font-size: 24px; /* Aumentar o tamanho do texto */
+    font-family: 'Roboto', sans-serif; /* Fonte Sans-serif */
+}
+
+.envelope .content label {
+    color: #FFD793; /* Mesma cor das letras do texto */
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.envelope .content input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.envelope .content .confirm-button {
+    background-color: #D0A933;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.5;
+    border-radius: 10px; /* Border radius nos botões */
+}
+
+.envelope.open {
+    transform: rotateX(180deg);
+}
+
+.thank-you-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px; /* Dobro do tamanho original */
+    color: #D0A933;
+    animation: thankYouFadeIn 2s ease-in-out forwards;
+    text-align: center;
+}
+
+@keyframes thankYouFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes confetti {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(500px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #D0A933;
+    opacity: 0;
+    animation: confetti 2s ease-out forwards;
+}
+
+.error-message {
+    color: #FFD793; /* Mesma cor das letras do texto */
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .envelope {
+        width: 90%;
+        height: 90%;
+    }
+
+    .envelope .content p {
+        font-size: 20px; /* Ajustar tamanho do texto para dispositivos menores */
+    }
+
+    .thank-you-message {
+        font-size: 36px; /* Ajustar tamanho da mensagem de agradecimento para dispositivos menores */
+    }
+}
